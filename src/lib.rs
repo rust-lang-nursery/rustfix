@@ -184,7 +184,7 @@ pub fn collect_suggestions<S: ::std::hash::BuildHasher>(
                 })
                 .filter_map(collect_span)
                 .collect();
-            if replacements.len() == 1 {
+            if !replacements.is_empty() {
                 Some(Solution {
                     message: child.message.clone(),
                     replacements,

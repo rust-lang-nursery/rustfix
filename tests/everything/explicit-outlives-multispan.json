@@ -1,0 +1,136 @@
+{
+    "message": "outlives requirements can be inferred",
+    "code": {
+        "code": "explicit_outlives_requirements",
+        "explanation": null
+    },
+    "level": "error",
+    "spans": [
+        {
+            "file_name": "/home/zmd/Code/rustfix/tests/everything/explicit-outlives-multispan.rs",
+            "byte_start": 128,
+            "byte_end": 132,
+            "line_start": 6,
+            "line_end": 6,
+            "column_start": 44,
+            "column_end": 48,
+            "is_primary": true,
+            "text": [
+                {
+                    "text": "struct TeeOutlivesAyYooBeeIsDebug<'a, 'b, T: 'a, U: 'b + Debug> {",
+                    "highlight_start": 44,
+                    "highlight_end": 48
+                }
+            ],
+            "label": null,
+            "suggested_replacement": null,
+            "suggestion_applicability": null,
+            "expansion": null
+        },
+        {
+            "file_name": "/home/zmd/Code/rustfix/tests/everything/explicit-outlives-multispan.rs",
+            "byte_start": 137,
+            "byte_end": 142,
+            "line_start": 6,
+            "line_end": 6,
+            "column_start": 53,
+            "column_end": 58,
+            "is_primary": true,
+            "text": [
+                {
+                    "text": "struct TeeOutlivesAyYooBeeIsDebug<'a, 'b, T: 'a, U: 'b + Debug> {",
+                    "highlight_start": 53,
+                    "highlight_end": 58
+                }
+            ],
+            "label": null,
+            "suggested_replacement": null,
+            "suggestion_applicability": null,
+            "expansion": null
+        }
+    ],
+    "children": [
+        {
+            "message": "lint level defined here",
+            "code": null,
+            "level": "note",
+            "spans": [
+                {
+                    "file_name": "/home/zmd/Code/rustfix/tests/everything/explicit-outlives-multispan.rs",
+                    "byte_start": 29,
+                    "byte_end": 59,
+                    "line_start": 2,
+                    "line_end": 2,
+                    "column_start": 9,
+                    "column_end": 39,
+                    "is_primary": true,
+                    "text": [
+                        {
+                            "text": "#![deny(explicit_outlives_requirements)]",
+                            "highlight_start": 9,
+                            "highlight_end": 39
+                        }
+                    ],
+                    "label": null,
+                    "suggested_replacement": null,
+                    "suggestion_applicability": null,
+                    "expansion": null
+                }
+            ],
+            "children": [],
+            "rendered": null
+        },
+        {
+            "message": "remove these bounds",
+            "code": null,
+            "level": "help",
+            "spans": [
+                {
+                    "file_name": "/home/zmd/Code/rustfix/tests/everything/explicit-outlives-multispan.rs",
+                    "byte_start": 128,
+                    "byte_end": 132,
+                    "line_start": 6,
+                    "line_end": 6,
+                    "column_start": 44,
+                    "column_end": 48,
+                    "is_primary": true,
+                    "text": [
+                        {
+                            "text": "struct TeeOutlivesAyYooBeeIsDebug<'a, 'b, T: 'a, U: 'b + Debug> {",
+                            "highlight_start": 44,
+                            "highlight_end": 48
+                        }
+                    ],
+                    "label": null,
+                    "suggested_replacement": "",
+                    "suggestion_applicability": "MachineApplicable",
+                    "expansion": null
+                },
+                {
+                    "file_name": "/home/zmd/Code/rustfix/tests/everything/explicit-outlives-multispan.rs",
+                    "byte_start": 137,
+                    "byte_end": 142,
+                    "line_start": 6,
+                    "line_end": 6,
+                    "column_start": 53,
+                    "column_end": 58,
+                    "is_primary": true,
+                    "text": [
+                        {
+                            "text": "struct TeeOutlivesAyYooBeeIsDebug<'a, 'b, T: 'a, U: 'b + Debug> {",
+                            "highlight_start": 53,
+                            "highlight_end": 58
+                        }
+                    ],
+                    "label": null,
+                    "suggested_replacement": "",
+                    "suggestion_applicability": "MachineApplicable",
+                    "expansion": null
+                }
+            ],
+            "children": [],
+            "rendered": null
+        }
+    ],
+    "rendered": "error: outlives requirements can be inferred\n --> /home/zmd/Code/rustfix/tests/everything/explicit-outlives-multispan.rs:6:44\n  |\n6 | struct TeeOutlivesAyYooBeeIsDebug<'a, 'b, T: 'a, U: 'b + Debug> {\n  |                                            ^^^^     ^^^^^\n  |\nnote: lint level defined here\n --> /home/zmd/Code/rustfix/tests/everything/explicit-outlives-multispan.rs:2:9\n  |\n2 | #![deny(explicit_outlives_requirements)]\n  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nhelp: remove these bounds\n  |\n6 | struct TeeOutlivesAyYooBeeIsDebug<'a, 'b, T, U: Debug> {\n  |                                           --   --\n\n"
+}
